@@ -1,0 +1,33 @@
+type Minted @entity {
+  id: ID!
+  contract: Bytes!
+  block: BigInt!
+  owner: Bytes!
+  tokenId: BigInt!
+}
+
+type Burned @entity {
+  id: ID!
+  contract: Bytes!
+  block: BigInt!
+  owner: Bytes!
+  tokenId: BigInt!
+}
+
+type URIGeneration @entity {
+  id: ID!
+  contract: Bytes!
+  block: BigInt!
+  owner: Bytes!
+  tokenId: BigInt!
+  tokenURI: String!
+}
+
+type Transfer @entity {
+  id: ID!
+  contract: Bytes!
+  block: BigInt!
+  from: Bytes!
+  to: Bytes!
+  tokenId: BigInt!
+}
