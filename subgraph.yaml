@@ -2,7 +2,7 @@ specVersion: 0.0.4
 schema:
   file: ./schema.graphql
 dataSources:
-  - kind: ethereum
+  - kind: ethereum/contract
     name: ArmorERC721
     network: chapel
     source:
@@ -14,15 +14,12 @@ dataSources:
       apiVersion: 0.0.5
       language: wasm/assemblyscript
       entities:
-        - Minted
         - Transfer
         - URIGeneration
       abis:
         - name: ArmorERC721
           file: ./abis/ArmorERC721.json
       eventHandlers:
-        - event: Minted(indexed address,indexed uint256)
-          handler: handleMinted
         - event: Transfer(indexed address,indexed address,indexed uint256)
           handler: handleTransfer
         - event: URIGeneration(uint256,string)
@@ -40,17 +37,84 @@ dataSources:
       apiVersion: 0.0.5
       language: wasm/assemblyscript
       entities:
-        - Minted
         - Transfer
         - URIGeneration
       abis:
         - name: WeaponERC721
           file: ./abis/WeaponERC721.json
       eventHandlers:
-        - event: WeaponERC721Minted(indexed address,indexed uint256)
-          handler: handleWeaponERC721Minted
-        - event: WeaponERC721Transfer(indexed address,indexed address,indexed uint256)
-          handler: handleWeaponERC721Transfer
-        - event: WeaponERC721URIGeneration(uint256,string)
-          handler: handleWeaponERC721URIGeneration
+        - event: Transfer(indexed address,indexed address,indexed uint256)
+          handler: handleTransfer
+        - event: URIGeneration(uint256,string)
+          handler: handleURIGeneration
       file: ./src/weapon-erc-721.ts
+  - kind: ethereum/contract
+    name: ClanBadgeERC721
+    network: chapel
+    source:
+      address: "0x26FD6e2bb278FF0257f7eAd647A900Abf19cE4d3"
+      abi: ClanBadgeERC721
+      startBlock: 22231285
+    mapping:
+      kind: ethereum/events
+      apiVersion: 0.0.5
+      language: wasm/assemblyscript
+      entities:
+        - Transfer
+        - URIGeneration
+      abis:
+        - name: ClanBadgeERC721
+          file: ./abis/ClanBadgeERC721.json
+      eventHandlers:
+        - event: Transfer(indexed address,indexed address,indexed uint256)
+          handler: handleTransfer
+        - event: URIGeneration(uint256,string)
+          handler: handleURIGeneration
+      file: ./src/clan-badge-erc-721.ts
+  - kind: ethereum/contract
+    name: LandVehicleERC721
+    network: chapel
+    source:
+      address: "0xbFD7BEE925623783ebBFC7ad76fA576Bd0FA6F07"
+      abi: LandVehicleERC721
+      startBlock: 22231285
+    mapping:
+      kind: ethereum/events
+      apiVersion: 0.0.5
+      language: wasm/assemblyscript
+      entities:
+        - Transfer
+        - URIGeneration
+      abis:
+        - name: LandVehicleERC721
+          file: ./abis/LandVehicleERC721.json
+      eventHandlers:
+        - event: Transfer(indexed address,indexed address,indexed uint256)
+          handler: handleTransfer
+        - event: URIGeneration(uint256,string)
+          handler: handleURIGeneration
+      file: ./src/land-vehicle-erc-721.ts
+  - kind: ethereum/contract
+    name: SpaceVehicleERC721
+    network: chapel
+    source:
+      address: "0x630027b7B31fDB407DE8192ddeF68eA3b088f46a"
+      abi: SpaceVehicleERC721
+      startBlock: 22231285
+    mapping:
+      kind: ethereum/events
+      apiVersion: 0.0.5
+      language: wasm/assemblyscript
+      entities:
+        - Transfer
+        - URIGeneration
+      abis:
+        - name: SpaceVehicleERC721
+          file: ./abis/SpaceVehicleERC721.json
+      eventHandlers:
+        - event: Transfer(indexed address,indexed address,indexed uint256)
+          handler: handleTransfer
+        - event: URIGeneration(uint256,string)
+          handler: handleURIGeneration
+      file: ./src/space-vehicle-erc-721.ts
+

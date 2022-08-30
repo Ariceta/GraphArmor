@@ -1,4 +1,4 @@
-import { URIGeneration, Transfer } from "../generated/WeaponERC721/WeaponERC721"
+import { URIGeneration, Transfer } from "../generated/LandVehicleERC721/LandVehicleERC721"
 import { Transfer as TransferEntity, URIGeneration as URIGenerationEntity } from "../generated/schema"
 
 export function handleTransfer(event: Transfer): void {
