@@ -1,7 +1,24 @@
 {
   "chapel": {
     "ArmorERC721": {
-      "address": "0x54E43F581076202065b54a390cf577DFCAe4c6b6"
+      "address": "0x54E43F581076202065b54a390cf577DFCAe4c6b6",
+      "startBlock": 20386306
+    },
+    "WeaponERC721": {
+      "address": "0xa1f2160D11850BdEC97D6237F232A2F4155Fc3Dc",
+      "startBlock": 20386324
+    },
+    "ClanBadgeERC721": {
+      "address": "0x26FD6e2bb278FF0257f7eAd647A900Abf19cE4d3",
+      "startBlock": 20386075
+    },
+    "LandVehicleERC721": {
+      "address": "0xbFD7BEE925623783ebBFC7ad76fA576Bd0FA6F07",
+      "startBlock": 20386359
+    },
+    "SpaceVehicleERC721": {
+      "address": "0x630027b7B31fDB407DE8192ddeF68eA3b088f46a",
+      "startBlock": 20386387
     }
   }
 }
