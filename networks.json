@@ -4,13 +4,21 @@
       "address": "0x54E43F581076202065b54a390cf577DFCAe4c6b6",
       "startBlock": 20386306
     },
-    "WeaponERC721": {
-      "address": "0xa1f2160D11850BdEC97D6237F232A2F4155Fc3Dc",
-      "startBlock": 20386324
+    "BuySell": {
+      "address": "0x390A9Cb58224C59483Fd10fDeBE4098a24D76E9f",
+      "startBlock": 22462113
     },
     "ClanBadgeERC721": {
       "address": "0x26FD6e2bb278FF0257f7eAd647A900Abf19cE4d3",
       "startBlock": 20386075
+    },
+    "CosmeticERC721": {
+      "address": "0x51E8432d976BE92BB572EA1F099054f01950720E",
+      "startBlock": 20643833
+    },
+    "ExocreditERC721": {
+      "address": "0x54f9DD2eF4A6f290da0e91bE58f0515B37FA2296",
+      "startBlock": 20386285
     },
     "LandVehicleERC721": {
       "address": "0xbFD7BEE925623783ebBFC7ad76fA576Bd0FA6F07",
@@ -19,6 +27,10 @@
     "SpaceVehicleERC721": {
       "address": "0x630027b7B31fDB407DE8192ddeF68eA3b088f46a",
       "startBlock": 20386387
+    },
+    "WeaponERC721": {
+      "address": "0xa1f2160D11850BdEC97D6237F232A2F4155Fc3Dc",
+      "startBlock": 20386324
     }
   }
 }

@@ -26,28 +26,37 @@ dataSources:
           handler: handleURIGeneration
       file: ./src/armor-erc-721.ts
   - kind: ethereum/contract
-    name: WeaponERC721
+    name: BuySell
     network: chapel
     source:
-      address: "0xa1f2160D11850BdEC97D6237F232A2F4155Fc3Dc"
-      abi: WeaponERC721
-      startBlock: 22231285
+      address: "0x390A9Cb58224C59483Fd10fDeBE4098a24D76E9f"
+      abi: BuySell
+      startBlock: 22462113
     mapping:
       kind: ethereum/events
       apiVersion: 0.0.5
       language: wasm/assemblyscript
       entities:
-        - Transfer
-        - URIGeneration
+        - BuyPriceUpdated
+        - NFTTransferredAndSellerPaid
+        - PushMade
+        - SaleCreated
+        - SaleWithdrawn
       abis:
-        - name: WeaponERC721
-          file: ./abis/WeaponERC721.json
+        - name: BuySell
+          file: ./abis/BuySell.json
       eventHandlers:
-        - event: Transfer(indexed address,indexed address,indexed uint256)
-          handler: handleTransfer
-        - event: URIGeneration(uint256,string)
-          handler: handleURIGeneration
-      file: ./src/weapon-erc-721.ts
+        - event: BuyPriceUpdated(address,uint256,uint128)
+          handler: handleBuyPriceUpdated
+        - event: NFTTransferredAndSellerPaid(address,uint256,address,uint128,address,address)
+          handler: handleNFTTransferredAndSellerPaid
+        - event: PushMade(address,uint256,address,uint256,address,uint256)
+          handler: handlePushMade
+        - event: SaleCreated(address,uint256,address,address,uint128)
+          handler: handleSaleCreated
+        - event: SaleWithdrawn(address,uint256,address)
+          handler: handleSaleWithdrawn
+      file: ./src/buy-sell.ts
   - kind: ethereum/contract
     name: ClanBadgeERC721
     network: chapel
@@ -71,6 +80,49 @@ dataSources:
         - event: URIGeneration(uint256,string)
           handler: handleURIGeneration
       file: ./src/clan-badge-erc-721.ts
+  - kind: ethereum/contract
+    name: CosmeticERC721
+    network: chapel
+    source:
+      address: "0x51E8432d976BE92BB572EA1F099054f01950720E"
+      abi: CosmeticERC721
+      startBlock: 20643833
+    mapping:
+      kind: ethereum/events
+      apiVersion: 0.0.5
+      language: wasm/assemblyscript
+      entities:
+        - Transfer
+      abis:
+        - name: CosmeticERC721
+          file: ./abis/CosmeticERC721.json
+      eventHandlers:
+        - event: Transfer(indexed address,indexed address,indexed uint256)
+          handler: handleTransfer
+      file: ./src/cosmetic-erc-721.ts
+  - kind: ethereum/contract
+    name: ExocreditERC721
+    network: chapel
+    source:
+      address: "0x54f9DD2eF4A6f290da0e91bE58f0515B37FA2296"
+      abi: ExocreditERC721
+      startBlock: 20386285
+    mapping:
+      kind: ethereum/events
+      apiVersion: 0.0.5
+      language: wasm/assemblyscript
+      entities:
+        - Transfer
+        - URIGeneration
+      abis:
+        - name: ExocreditERC721
+          file: ./abis/ExocreditERC721.json
+      eventHandlers:
+        - event: Transfer(indexed address,indexed address,indexed uint256)
+          handler: handleTransfer
+        - event: URIGeneration(uint256,string)
+          handler: handleURIGeneration
+      file: ./src/exocredit-erc-721.ts
   - kind: ethereum/contract
     name: LandVehicleERC721
     network: chapel
@@ -118,34 +170,25 @@ dataSources:
           handler: handleURIGeneration
       file: ./src/space-vehicle-erc-721.ts
   - kind: ethereum/contract
-    name: BuySell
+    name: WeaponERC721
     network: chapel
     source:
-      address: "0x390A9Cb58224C59483Fd10fDeBE4098a24D76E9f"
-      abi: BuySell
-      startBlock: 22462113
+      address: "0xa1f2160D11850BdEC97D6237F232A2F4155Fc3Dc"
+      abi: WeaponERC721
+      startBlock: 22231285
     mapping:
       kind: ethereum/events
       apiVersion: 0.0.5
       language: wasm/assemblyscript
       entities:
-        - BuyPriceUpdated
-        - NFTTransferredAndSellerPaid
-        - PushMade
-        - SaleCreated
-        - SaleWithdrawn
+        - Transfer
+        - URIGeneration
       abis:
-        - name: BuySell
-          file: ./abis/BuySell.json
+        - name: WeaponERC721
+          file: ./abis/WeaponERC721.json
       eventHandlers:
-        - event: BuyPriceUpdated(address,uint256,uint128)
-          handler: handleBuyPriceUpdated
-        - event: NFTTransferredAndSellerPaid(address,uint256,address,uint128,address,address)
-          handler: handleNFTTransferredAndSellerPaid
-        - event: PushMade(address,uint256,address,uint256,address,uint256)
-          handler: handlePushMade
-        - event: SaleCreated(address,uint256,address,address,uint128)
-          handler: handleSaleCreated
-        - event: SaleWithdrawn(address,uint256,address)
-          handler: handleSaleWithdrawn
-      file: ./src/buy-sell.ts
+        - event: Transfer(indexed address,indexed address,indexed uint256)
+          handler: handleTransfer
+        - event: URIGeneration(uint256,string)
+          handler: handleURIGeneration
+      file: ./src/weapon-erc-721.ts

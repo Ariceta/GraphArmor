@@ -1,6 +1,4 @@
-import { BigInt } from "@graphprotocol/graph-ts";
 import {
-  BuySell,
   BuyPriceUpdated,
   NFTTransferredAndSellerPaid,
   PushMade,

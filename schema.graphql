@@ -15,3 +15,55 @@ type Transfer @entity {
   to: Bytes!
   tokenId: BigInt!
 }
+
+type SaleCreated @entity {
+  id: ID!
+  contract: Bytes!
+  block: BigInt!
+  nftContractAddress: Bytes!
+  tokenId: BigInt!
+  nftSeller: Bytes!
+  erc20Token: Bytes!
+  buyPrice: BigInt!
+}
+
+type BuyPriceUpdated @entity {
+  id: ID!
+  contract: Bytes!
+  block: BigInt!
+  nftContractAddress: Bytes!
+  tokenId: BigInt!
+  newBuyPrice: BigInt!
+}
+
+type PushMade @entity {
+  id: ID!
+  contract: Bytes!
+  block: BigInt!
+  nftContractAddress: Bytes!
+  tokenId: BigInt!
+  pusher: Bytes!
+  erc20Token: Bytes!
+  tokenAmount: BigInt!
+}
+
+type NFTTransferredAndSellerPaid @entity {
+  id: ID!
+  contract: Bytes!
+  block: BigInt!
+  nftContractAddress: Bytes!
+  tokenId: BigInt!
+  nftSeller: Bytes!
+  nftHighestPush: BigInt!
+  nftHighestPusher: Bytes!
+  nftRecipient: Bytes!
+}
+
+type SaleWithdrawn @entity {
+  id: ID!
+  contract: Bytes!
+  block: BigInt!
+  nftContractAddress: Bytes!
+  tokenId: BigInt!
+  nftOwner: Bytes!
+}
