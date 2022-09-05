@@ -6,9 +6,9 @@ dataSources:
     name: ArmorERC721
     network: chapel
     source:
-      abi: ArmorERC721
       address: "0x54E43F581076202065b54a390cf577DFCAe4c6b6"
-      startBlock: 20386306
+      abi: ArmorERC721
+      startBlock: 22231285
     mapping:
       kind: ethereum/events
       apiVersion: 0.0.5
@@ -29,9 +29,9 @@ dataSources:
     name: WeaponERC721
     network: chapel
     source:
-      abi: WeaponERC721
       address: "0xa1f2160D11850BdEC97D6237F232A2F4155Fc3Dc"
-      startBlock: 20386324
+      abi: WeaponERC721
+      startBlock: 22231285
     mapping:
       kind: ethereum/events
       apiVersion: 0.0.5
@@ -52,9 +52,9 @@ dataSources:
     name: ClanBadgeERC721
     network: chapel
     source:
-      abi: ClanBadgeERC721
       address: "0x26FD6e2bb278FF0257f7eAd647A900Abf19cE4d3"
-      startBlock: 20386075
+      abi: ClanBadgeERC721
+      startBlock: 22231285
     mapping:
       kind: ethereum/events
       apiVersion: 0.0.5
@@ -75,9 +75,9 @@ dataSources:
     name: LandVehicleERC721
     network: chapel
     source:
-      abi: LandVehicleERC721
       address: "0xbFD7BEE925623783ebBFC7ad76fA576Bd0FA6F07"
-      startBlock: 20386359
+      abi: LandVehicleERC721
+      startBlock: 22231285
     mapping:
       kind: ethereum/events
       apiVersion: 0.0.5
@@ -98,9 +98,9 @@ dataSources:
     name: SpaceVehicleERC721
     network: chapel
     source:
-      abi: SpaceVehicleERC721
       address: "0x630027b7B31fDB407DE8192ddeF68eA3b088f46a"
-      startBlock: 20386387
+      abi: SpaceVehicleERC721
+      startBlock: 22231285
     mapping:
       kind: ethereum/events
       apiVersion: 0.0.5
@@ -117,3 +117,35 @@ dataSources:
         - event: URIGeneration(uint256,string)
           handler: handleURIGeneration
       file: ./src/space-vehicle-erc-721.ts
+  - kind: ethereum/contract
+    name: BuySell
+    network: chapel
+    source:
+      address: "0x390A9Cb58224C59483Fd10fDeBE4098a24D76E9f"
+      abi: BuySell
+      startBlock: 22462113
+    mapping:
+      kind: ethereum/events
+      apiVersion: 0.0.5
+      language: wasm/assemblyscript
+      entities:
+        - BuyPriceUpdated
+        - NFTTransferredAndSellerPaid
+        - PushMade
+        - SaleCreated
+        - SaleWithdrawn
+      abis:
+        - name: BuySell
+          file: ./abis/BuySell.json
+      eventHandlers:
+        - event: BuyPriceUpdated(address,uint256,uint128)
+          handler: handleBuyPriceUpdated
+        - event: NFTTransferredAndSellerPaid(address,uint256,address,uint128,address,address)
+          handler: handleNFTTransferredAndSellerPaid
+        - event: PushMade(address,uint256,address,uint256,address,uint256)
+          handler: handlePushMade
+        - event: SaleCreated(address,uint256,address,address,uint128)
+          handler: handleSaleCreated
+        - event: SaleWithdrawn(address,uint256,address)
+          handler: handleSaleWithdrawn
+      file: ./src/buy-sell.ts
