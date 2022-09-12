@@ -47,18 +47,6 @@ type PushMade @entity {
   tokenAmount: BigInt!
 }
 
-type NFTTransferredAndSellerPaid @entity {
-  id: ID!
-  contract: Bytes!
-  block: BigInt!
-  nftContractAddress: Bytes!
-  tokenId: BigInt!
-  nftSeller: Bytes!
-  nftHighestPush: BigInt!
-  nftHighestPusher: Bytes!
-  nftRecipient: Bytes!
-}
-
 type SaleWithdrawn @entity {
   id: ID!
   contract: Bytes!

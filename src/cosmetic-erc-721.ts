@@ -2,7 +2,7 @@ import { Transfer } from "../generated/CosmeticERC721/CosmeticERC721"
 import { Transfer as TransferEntity, URIGeneration as URIGenerationEntity } from "../generated/schema"
 
 export function handleTransfer(event: Transfer): void {
-  const entity = new TransferEntity(event.transaction.hash.toHex());
+  const entity = new TransferEntity(event.transaction.hash.toHex() + '-' + event.logIndex.toString());
   entity.block = event.block.number;
   entity.contract = event.address;
   entity.from = event.params.from;
