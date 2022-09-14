@@ -36,7 +36,7 @@ type BuyPriceUpdated @entity {
   newBuyPrice: BigInt!
 }
 
-type PushMade @entity {
+type TokenBought @entity {
   id: ID!
   contract: Bytes!
   block: BigInt!

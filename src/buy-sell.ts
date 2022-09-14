@@ -1,12 +1,12 @@
 import {
   BuyPriceUpdated,
-  PushMade,
+  TokenBought,
   SaleCreated,
   SaleWithdrawn,
 } from "../generated/BuySell/BuySell";
 import {
   BuyPriceUpdated as BuyPriceUpdatedEntity,
-  PushMade as PushMadeEntity,
+  TokenBought as TokenBoughtEntity,
   SaleCreated as SaleCreatedEntity,
   SaleWithdrawn as SaleWithdrawnEntity,
 } from "../generated/schema";
@@ -21,15 +21,15 @@ export function handleBuyPriceUpdated(event: BuyPriceUpdated): void {
   entity.save();
 }
 
-export function handlePushMade(event: PushMade): void {
-  const entity = new PushMadeEntity(event.transaction.hash.toHex() + '-' + event.logIndex.toString());
+export function handleTokenBought(event: TokenBought): void {
+  const entity = new TokenBoughtEntity(event.transaction.hash.toHex() + '-' + event.logIndex.toString());
   entity.block = event.block.number;
   entity.contract = event.address;
   entity.nftContractAddress = event.params.nftContractAddress;
   entity.tokenId = event.params.tokenId;
-  entity.pusher = event.params.Pusher;
-  entity.erc20Token = event.params.erc20Token;
-  entity.tokenAmount = event.params.tokenAmount;
+  entity.pusher = event.params.nftRecipient;
+  // entity.erc20Token = event.params.erc20Token;
+  // entity.tokenAmount = event.params.tokenAmount;
   entity.save();
 }
 

@@ -1,36 +1,36 @@
 {
   "chapel": {
     "ArmorERC721": {
-      "address": "0x54E43F581076202065b54a390cf577DFCAe4c6b6",
-      "startBlock": 20386306
+      "address": "0x4081b8Aa0938aD834E1972B38020093b5F43f755",
+      "startBlock": 22829961
     },
     "BuySell": {
-      "address": "0x390A9Cb58224C59483Fd10fDeBE4098a24D76E9f",
-      "startBlock": 22462113
+      "address": "0xd6ca834D2E1EE8Ae7F7609572db6BCCD96038833",
+      "startBlock": 22806658
     },
     "ClanBadgeERC721": {
-      "address": "0x26FD6e2bb278FF0257f7eAd647A900Abf19cE4d3",
-      "startBlock": 20386075
+      "address": "0xD2886f003D7c3402864A5f04ED515230Da1bEEe5",
+      "startBlock": 22829648
     },
     "CosmeticERC721": {
-      "address": "0x51E8432d976BE92BB572EA1F099054f01950720E",
-      "startBlock": 20643833
+      "address": "0xEc90398aC9CD4A9905E9184bcb28834AD79d7932",
+      "startBlock": 22830024
     },
     "ExocreditERC721": {
-      "address": "0x54f9DD2eF4A6f290da0e91bE58f0515B37FA2296",
-      "startBlock": 20386285
+      "address": "0xc93f8FeFA429432598674CA15E366D09B5472a19",
+      "startBlock": 22829946
     },
     "LandVehicleERC721": {
-      "address": "0xbFD7BEE925623783ebBFC7ad76fA576Bd0FA6F07",
-      "startBlock": 20386359
+      "address": "0xA8e7bdc3030143c47C78b38fd517A88238c46936",
+      "startBlock": 22829992
     },
     "SpaceVehicleERC721": {
-      "address": "0x630027b7B31fDB407DE8192ddeF68eA3b088f46a",
-      "startBlock": 20386387
+      "address": "0x799A0AefEBAb136029C73221eC832dbA3F95e765",
+      "startBlock": 22830011
     },
     "WeaponERC721": {
-      "address": "0xa1f2160D11850BdEC97D6237F232A2F4155Fc3Dc",
-      "startBlock": 20386324
+      "address": "0x50325B53ddc9Ba79D56aCE755e2469b0F2bc5642",
+      "startBlock": 22829975
     }
   }
 }
