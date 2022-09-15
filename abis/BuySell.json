@@ -136,6 +136,45 @@
     "inputs": [
       {
         "indexed": false,
+        "internalType": "uint256",
+        "name": "newFee",
+        "type": "uint256"
+      }
+    ],
+    "name": "ChangedDefaultFeePercentages",
+    "type": "event"
+  },
+  {
+    "anonymous": false,
+    "inputs": [
+      {
+        "indexed": false,
+        "internalType": "address",
+        "name": "newFee",
+        "type": "address"
+      }
+    ],
+    "name": "ChangedDefaultFeeRecipient",
+    "type": "event"
+  },
+  {
+    "anonymous": false,
+    "inputs": [
+      {
+        "indexed": false,
+        "internalType": "uint256",
+        "name": "newFee",
+        "type": "uint256"
+      }
+    ],
+    "name": "ChangedFirstOwnerFeePercentage",
+    "type": "event"
+  },
+  {
+    "anonymous": false,
+    "inputs": [
+      {
+        "indexed": false,
         "internalType": "uint8",
         "name": "version",
         "type": "uint8"
@@ -330,8 +369,26 @@
       },
       {
         "indexed": false,
+        "internalType": "uint256",
+        "name": "buyPrice",
+        "type": "uint256"
+      },
+      {
+        "indexed": false,
+        "internalType": "address",
+        "name": "erc20Token",
+        "type": "address"
+      },
+      {
+        "indexed": false,
         "internalType": "address",
         "name": "nftSeller",
+        "type": "address"
+      },
+      {
+        "indexed": false,
+        "internalType": "address",
+        "name": "nftBuyer",
         "type": "address"
       },
       {
@@ -342,6 +399,32 @@
       }
     ],
     "name": "TokenBought",
+    "type": "event"
+  },
+  {
+    "anonymous": false,
+    "inputs": [
+      {
+        "indexed": true,
+        "internalType": "address",
+        "name": "nftToWhitelist",
+        "type": "address"
+      }
+    ],
+    "name": "UnWhitelistedNFT",
+    "type": "event"
+  },
+  {
+    "anonymous": false,
+    "inputs": [
+      {
+        "indexed": true,
+        "internalType": "address",
+        "name": "tokenaddressToWhitelist",
+        "type": "address"
+      }
+    ],
+    "name": "UnWhitelistedToken",
     "type": "event"
   },
   {
@@ -363,11 +446,11 @@
       {
         "indexed": true,
         "internalType": "address",
-        "name": "tokenaddressToWhitelist",
+        "name": "nftToWhitelist",
         "type": "address"
       }
     ],
-    "name": "unWhitelistedToken",
+    "name": "WhitelistedNFT",
     "type": "event"
   },
   {
@@ -380,7 +463,7 @@
         "type": "address"
       }
     ],
-    "name": "whitelistedToken",
+    "name": "WhitelistedToken",
     "type": "event"
   },
   {
@@ -394,11 +477,24 @@
     "inputs": [
       {
         "internalType": "address",
-        "name": "_tokenaddressToWhitelist",
+        "name": "_nftToWhitelist",
         "type": "address"
       }
     ],
-    "name": "addTokentoWhitelist",
+    "name": "addNFTToWhitelist",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "address",
+        "name": "_tokenAddressToWhitelist",
+        "type": "address"
+      }
+    ],
+    "name": "addTokenToWhitelist",
     "outputs": [],
     "stateMutability": "nonpayable",
     "type": "function"
@@ -426,37 +522,9 @@
         "type": "address"
       },
       { "internalType": "uint256", "name": "_tokenId", "type": "uint256" },
-      { "internalType": "address", "name": "_erc20Token", "type": "address" },
-      { "internalType": "uint256", "name": "_tokenAmount", "type": "uint256" },
       { "internalType": "address", "name": "_nftRecipient", "type": "address" }
     ],
     "name": "buyWithTokens",
-    "outputs": [],
-    "stateMutability": "nonpayable",
-    "type": "function"
-  },
-  {
-    "inputs": [
-      {
-        "internalType": "uint32",
-        "name": "_newDefaultExtraFeePercentages",
-        "type": "uint32"
-      }
-    ],
-    "name": "changeDefaultExtraFeePercentages",
-    "outputs": [],
-    "stateMutability": "nonpayable",
-    "type": "function"
-  },
-  {
-    "inputs": [
-      {
-        "internalType": "address",
-        "name": "_newDefaultFeeRecipient",
-        "type": "address"
-      }
-    ],
-    "name": "changeDefaultExtraFeePercentages",
     "outputs": [],
     "stateMutability": "nonpayable",
     "type": "function"
@@ -470,6 +538,32 @@
       }
     ],
     "name": "changeDefaultFeePercentages",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "address",
+        "name": "_newDefaultFeeRecipient",
+        "type": "address"
+      }
+    ],
+    "name": "changeDefaultFeeRecipient",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "uint32",
+        "name": "_newFirstOwnerFeePercentage",
+        "type": "uint32"
+      }
+    ],
+    "name": "changeFirstOwnerFeePercentage",
     "outputs": [],
     "stateMutability": "nonpayable",
     "type": "function"
@@ -492,13 +586,6 @@
   },
   {
     "inputs": [],
-    "name": "defaultExtraFeePercentages",
-    "outputs": [{ "internalType": "uint32", "name": "", "type": "uint32" }],
-    "stateMutability": "view",
-    "type": "function"
-  },
-  {
-    "inputs": [],
     "name": "defaultFeePercentages",
     "outputs": [{ "internalType": "uint32", "name": "", "type": "uint32" }],
     "stateMutability": "view",
@@ -515,7 +602,20 @@
     "inputs": [
       {
         "internalType": "address",
-        "name": "_tokenaddressToWhitelist",
+        "name": "_nftToWhitelist",
+        "type": "address"
+      }
+    ],
+    "name": "deleteNFTFromWhitelist",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "address",
+        "name": "_tokenAddressToWhitelist",
         "type": "address"
       }
     ],
@@ -528,6 +628,13 @@
     "inputs": [{ "internalType": "address", "name": "", "type": "address" }],
     "name": "failedTransferCredits",
     "outputs": [{ "internalType": "uint256", "name": "", "type": "uint256" }],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [],
+    "name": "firstOwnerFeePercentage",
+    "outputs": [{ "internalType": "uint32", "name": "", "type": "uint32" }],
     "stateMutability": "view",
     "type": "function"
   },
@@ -568,19 +675,28 @@
         "type": "uint32"
       },
       {
-        "internalType": "uint32",
-        "name": "_defaultExtraFeePercentages",
-        "type": "uint32"
-      },
-      {
         "internalType": "address",
         "name": "_defaultFeeRecipient",
         "type": "address"
+      },
+      {
+        "internalType": "uint32",
+        "name": "_firstOwnerFeePercentage",
+        "type": "uint32"
       }
     ],
     "name": "initialize",
     "outputs": [],
     "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      { "internalType": "address", "name": "_nftAddress", "type": "address" }
+    ],
+    "name": "isWhitelistedNFT",
+    "outputs": [{ "internalType": "bool", "name": "", "type": "bool" }],
+    "stateMutability": "view",
     "type": "function"
   },
   {
@@ -614,20 +730,6 @@
   {
     "inputs": [],
     "name": "owner",
-    "outputs": [{ "internalType": "address", "name": "", "type": "address" }],
-    "stateMutability": "view",
-    "type": "function"
-  },
-  {
-    "inputs": [
-      {
-        "internalType": "address",
-        "name": "_nftContractAddress",
-        "type": "address"
-      },
-      { "internalType": "uint256", "name": "_tokenId", "type": "uint256" }
-    ],
-    "name": "ownerOfNFT",
     "outputs": [{ "internalType": "address", "name": "", "type": "address" }],
     "stateMutability": "view",
     "type": "function"
@@ -711,6 +813,13 @@
     "name": "updateBuyPrice",
     "outputs": [],
     "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [{ "internalType": "address", "name": "", "type": "address" }],
+    "name": "whitelistedNFTs",
+    "outputs": [{ "internalType": "bool", "name": "", "type": "bool" }],
+    "stateMutability": "view",
     "type": "function"
   },
   {

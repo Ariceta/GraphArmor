@@ -30,8 +30,8 @@ dataSources:
     network: chapel
     source:
       abi: BuySell
-      address: "0xd6ca834D2E1EE8Ae7F7609572db6BCCD96038833"
-      startBlock: 22806658
+      address: "0x9E04511F9fE6BF52D1c05Bee2c547f33849c7047"
+      startBlock: 22857709
     mapping:
       kind: ethereum/events
       apiVersion: 0.0.5
@@ -51,7 +51,7 @@ dataSources:
           handler: handleSaleCreated
         - event: SaleWithdrawn(address,uint256,address)
           handler: handleSaleWithdrawn
-        - event: TokenBought(address,uint256,address,address)
+        - event: TokenBought(address,uint256,uint256,address,address,address,address)
           handler: handleTokenBought
       file: ./src/buy-sell.ts
   - kind: ethereum

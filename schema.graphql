@@ -18,7 +18,6 @@ type Transfer @entity {
 
 type SaleCreated @entity {
   id: ID!
-  contract: Bytes!
   block: BigInt!
   nftContractAddress: Bytes!
   tokenId: BigInt!
@@ -29,7 +28,6 @@ type SaleCreated @entity {
 
 type BuyPriceUpdated @entity {
   id: ID!
-  contract: Bytes!
   block: BigInt!
   nftContractAddress: Bytes!
   tokenId: BigInt!
@@ -38,7 +36,6 @@ type BuyPriceUpdated @entity {
 
 type TokenBought @entity {
   id: ID!
-  contract: Bytes!
   block: BigInt!
   nftContractAddress: Bytes!
   tokenId: BigInt!
@@ -49,7 +46,6 @@ type TokenBought @entity {
 
 type SaleWithdrawn @entity {
   id: ID!
-  contract: Bytes!
   block: BigInt!
   nftContractAddress: Bytes!
   tokenId: BigInt!
