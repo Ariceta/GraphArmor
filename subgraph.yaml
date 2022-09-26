@@ -98,6 +98,32 @@ dataSources:
           handler: handleTransfer
       file: ./src/cosmetic-erc-721.ts
   - kind: ethereum
+    name: EnglishAuction
+    network: chapel
+    source:
+      abi: EnglishAuction
+      address: "0xf90C0F129707E30C6B36047390Da69DdcbC86443"
+      startBlock: 23179960
+    mapping:
+      kind: ethereum/events
+      apiVersion: 0.0.5
+      language: wasm/assemblyscript
+      entities:
+        - BidMade
+        - NFTTransferredAndSellerPaid
+        - NftAuctionCreated
+      abis:
+        - name: EnglishAuction
+          file: ./abis/EnglishAuction.json
+      eventHandlers:
+        - event: BidMade(address,uint256,address,address,uint256)
+          handler: handleBidMade
+        - event: NFTTransferredAndSellerPaid(address,uint256,address,uint256,address)
+          handler: handleNFTTransferredAndSellerPaid
+        - event: NftAuctionCreated(address,uint256,address,address,uint256,uint32,uint32,address,uint32)
+          handler: handleNftAuctionCreated
+      file: ./src/english-auction.ts
+  - kind: ethereum
     name: LandVehicleERC721
     network: chapel
     source:

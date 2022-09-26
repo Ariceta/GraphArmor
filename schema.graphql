@@ -51,3 +51,40 @@ type SaleWithdrawn @entity {
   tokenId: BigInt!
   nftOwner: Bytes!
 }
+
+type NftAuctionCreated @entity {
+  id: ID!
+  contract: Bytes!
+  block: BigInt!
+  nftContractAddress: Bytes!
+  tokenId: BigInt! 
+  nftSeller: Bytes! 
+  erc20Token: Bytes!
+  minPrice: BigInt!
+  auctionBidPeriod: BigInt!
+  bidIncreasePercentage: BigInt!
+  feeRecipients: Bytes!
+  feePercentages: BigInt!
+}
+
+type BidMade @entity {
+  id: ID!
+  contract: Bytes!
+  block: BigInt!
+  nftContractAddress: Bytes!
+  tokenId: BigInt! 
+  bidder: Bytes! 
+  erc20Token: Bytes!
+  tokenAmount: BigInt!
+}
+
+type NFTTransferredAndSellerPaid @entity {
+  id: ID!
+  contract: Bytes!
+  block: BigInt!
+  nftContractAddress: Bytes!
+  tokenId: BigInt! 
+  nftSeller: Bytes! 
+  nftHighestBid: BigInt!
+  nftHighestBidder: Bytes!
+}

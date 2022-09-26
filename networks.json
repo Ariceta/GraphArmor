@@ -42,6 +42,10 @@
       "address": "0xEc90398aC9CD4A9905E9184bcb28834AD79d7932",
       "startBlock": 22830024
     },
+    "EnglishAuction": {
+      "address": "0xf90C0F129707E30C6B36047390Da69DdcbC86443",
+      "startBlock": 23179960
+    },
     "LandVehicleERC721": {
       "address": "0xA8e7bdc3030143c47C78b38fd517A88238c46936",
       "startBlock": 22829992
