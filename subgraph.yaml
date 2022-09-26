@@ -98,29 +98,6 @@ dataSources:
           handler: handleTransfer
       file: ./src/cosmetic-erc-721.ts
   - kind: ethereum
-    name: ExocreditERC721
-    network: chapel
-    source:
-      abi: ExocreditERC721
-      address: "0xc93f8FeFA429432598674CA15E366D09B5472a19"
-      startBlock: 22829946
-    mapping:
-      kind: ethereum/events
-      apiVersion: 0.0.5
-      language: wasm/assemblyscript
-      entities:
-        - Transfer
-        - URIGeneration
-      abis:
-        - name: ExocreditERC721
-          file: ./abis/ExocreditERC721.json
-      eventHandlers:
-        - event: Transfer(indexed address,indexed address,indexed uint256)
-          handler: handleTransfer
-        - event: URIGeneration(uint256,string)
-          handler: handleURIGeneration
-      file: ./src/exocredit-erc-721.ts
-  - kind: ethereum
     name: LandVehicleERC721
     network: chapel
     source:
