@@ -90,12 +90,15 @@ dataSources:
       language: wasm/assemblyscript
       entities:
         - Transfer
+        - URIGeneration
       abis:
         - name: CosmeticERC721
           file: ./abis/CosmeticERC721.json
       eventHandlers:
         - event: Transfer(indexed address,indexed address,indexed uint256)
           handler: handleTransfer
+        - event: URIGeneration(uint256,string)
+          handler: handleURIGeneration
       file: ./src/cosmetic-erc-721.ts
   - kind: ethereum
     name: EnglishAuction
