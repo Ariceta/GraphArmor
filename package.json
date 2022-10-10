@@ -1,16 +1,16 @@
 {
-  "name": "ORMarketplace",
+  "name": "pruebaMarketPlace1",
   "license": "UNLICENSED",
   "scripts": {
     "codegen": "graph codegen",
     "build": "graph build",
-    "deploy": "graph deploy --node https://api.thegraph.com/deploy/ asiernexxyotest/ORMarketplace",
-    "create-local": "graph create --node http://localhost:8020/ asiernexxyotest/ORMarketplace",
-    "remove-local": "graph remove --node http://localhost:8020/ asiernexxyotest/ORMarketplace",
-    "deploy-local": "graph deploy --node http://localhost:8020/ --ipfs http://localhost:5001 asiernexxyotest/ORMarketplace"
+    "deploy": "graph deploy --node https://api.thegraph.com/deploy/ mikelpruebas/pruebaMarketPlace1",
+    "create-local": "graph create --node http://localhost:8020/ mikelpruebas/pruebaMarketPlace1",
+    "remove-local": "graph remove --node http://localhost:8020/ mikelpruebas/pruebaMarketPlace1",
+    "deploy-local": "graph deploy --node http://localhost:8020/ --ipfs http://localhost:5001 mikelpruebas/pruebaMarketPlace1"
   },
   "dependencies": {
-    "@graphprotocol/graph-cli": "0.30.4",
-    "@graphprotocol/graph-ts": "0.27.0"
+    "@graphprotocol/graph-cli": "^0.34.0",
+    "@graphprotocol/graph-ts": "^0.28.0"
   }
 }

@@ -88,3 +88,20 @@ type NFTTransferredAndSellerPaid @entity {
   nftHighestBid: BigInt!
   nftHighestBidder: Bytes!
 }
+
+type UsersInventory @entity {
+  id: ID!
+  armors: [Armor!]
+  clanBadges: [BigInt!]
+}
+
+type Armor @entity {
+  id: ID! #tokenID
+  tier: Int!
+  rarityId: Int!
+  rarityName: String!
+  collectionId: Int!
+  collectionName: String!
+  firstOwner: Bytes!
+  piece: Int!
+}

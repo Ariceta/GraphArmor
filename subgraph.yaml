@@ -9,21 +9,23 @@ dataSources:
       abi: ArmorERC721
       address: "0x4081b8Aa0938aD834E1972B38020093b5F43f755"
       startBlock: 22829961
-    mapping:
+    mapping: 
       kind: ethereum/events
-      apiVersion: 0.0.5
+      apiVersion: 0.0.6
       language: wasm/assemblyscript
       entities:
         - Transfer
         - URIGeneration
       abis:
         - name: ArmorERC721
-          file: ./abis/ArmorERC721.json
+          file: ./abi_raw/ArmorERC721.json
       eventHandlers:
         - event: Transfer(indexed address,indexed address,indexed uint256)
           handler: handleTransfer
         - event: URIGeneration(uint256,string)
           handler: handleURIGeneration
+        - event: Minted(indexed address,indexed uint256)
+          handler: handleMinted
       file: ./src/armor-erc-721.ts
   - kind: ethereum
     name: BuySell
@@ -34,7 +36,7 @@ dataSources:
       startBlock: 22857709
     mapping:
       kind: ethereum/events
-      apiVersion: 0.0.5
+      apiVersion: 0.0.6
       language: wasm/assemblyscript
       entities:
         - BuyPriceUpdated
@@ -63,7 +65,7 @@ dataSources:
       startBlock: 22829648
     mapping:
       kind: ethereum/events
-      apiVersion: 0.0.5
+      apiVersion: 0.0.6
       language: wasm/assemblyscript
       entities:
         - Transfer
@@ -86,7 +88,7 @@ dataSources:
       startBlock: 22830024
     mapping:
       kind: ethereum/events
-      apiVersion: 0.0.5
+      apiVersion: 0.0.6
       language: wasm/assemblyscript
       entities:
         - Transfer
@@ -109,7 +111,7 @@ dataSources:
       startBlock: 23179960
     mapping:
       kind: ethereum/events
-      apiVersion: 0.0.5
+      apiVersion: 0.0.6
       language: wasm/assemblyscript
       entities:
         - BidMade
@@ -135,7 +137,7 @@ dataSources:
       startBlock: 22829992
     mapping:
       kind: ethereum/events
-      apiVersion: 0.0.5
+      apiVersion: 0.0.6
       language: wasm/assemblyscript
       entities:
         - Transfer
@@ -158,7 +160,7 @@ dataSources:
       startBlock: 22830011
     mapping:
       kind: ethereum/events
-      apiVersion: 0.0.5
+      apiVersion: 0.0.6
       language: wasm/assemblyscript
       entities:
         - Transfer
@@ -181,7 +183,7 @@ dataSources:
       startBlock: 22829975
     mapping:
       kind: ethereum/events
-      apiVersion: 0.0.5
+      apiVersion: 0.0.6
       language: wasm/assemblyscript
       entities:
         - Transfer
