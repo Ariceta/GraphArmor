@@ -3,60 +3,12 @@
     "ArmorERC721": {
       "address": "0x0B36F379d7B3b4588F8b8e7E65091B2C44fA6Dde",
       "startBlock": 18883898
-    },
-    "ClanBadgeERC721": {
-      "address": "0xf3A30BFAc67D0801450a670EdA88a8a96Aca7C6b",
-      "startBlock": 18883709
-    },
-    "CosmeticERC721": {
-      "address": "0x1361b5EDaEB86c07D10E4Ac3A68365f6b1996F5e",
-      "startBlock": 19136678
-    },
-    "LandVehicleERC721": {
-      "address": "0x21d7D56350FCF7470E4ac38BB2F32C1461a73D8c",
-      "startBlock": 18884004
-    },
-    "SpaceVehicleERC721": {
-      "address": "0xceAaC6759038D4d3B8791683B27b1021eFA57003",
-      "startBlock": 18884040
-    },
-    "WeaponERC721": {
-      "address": "0xeb1aCA4E9aa3448b7FEcB2B555301325b5931aD9",
-      "startBlock": 18883956
     }
   },
   "chapel": {
     "ArmorERC721": {
       "address": "0x4081b8Aa0938aD834E1972B38020093b5F43f755",
       "startBlock": 22829961
-    },
-    "BuySell": {
-      "address": "0x171b2553ac08E6416f44a33600637b234610FAC7",
-      "startBlock": 23382050
-    },
-    "ClanBadgeERC721": {
-      "address": "0xD2886f003D7c3402864A5f04ED515230Da1bEEe5",
-      "startBlock": 22829648
-    },
-    "CosmeticERC721": {
-      "address": "0xEc90398aC9CD4A9905E9184bcb28834AD79d7932",
-      "startBlock": 22830024
-    },
-    "EnglishAuction": {
-      "address": "0xf90C0F129707E30C6B36047390Da69DdcbC86443",
-      "startBlock": 23179960
-    },
-    "LandVehicleERC721": {
-      "address": "0xA8e7bdc3030143c47C78b38fd517A88238c46936",
-      "startBlock": 22829992
-    },
-    "SpaceVehicleERC721": {
-      "address": "0x799A0AefEBAb136029C73221eC832dbA3F95e765",
-      "startBlock": 22830011
-    },
-    "WeaponERC721": {
-      "address": "0x50325B53ddc9Ba79D56aCE755e2469b0F2bc5642",
-      "startBlock": 22829975
     }
   }
 }
